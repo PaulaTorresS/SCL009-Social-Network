@@ -1,8 +1,3 @@
 {
-<<<<<<< HEAD
-    "plugins": ["@babel/plugin-transform-modules-commonjs"]
-   }
-=======
  "plugins": ["@babel/plugin-transform-modules-commonjs"]
 }
->>>>>>> 38e100fa5312ba50b5948c309dfd80aa03a3da57
