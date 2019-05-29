@@ -7,11 +7,11 @@
     "test": "test"
   },
   "scripts": {
-   "test": "jest --coverage", 
-   "eslint": "eslint --ext .js src/ test/",
-   "htmlhint": "htmlhint src/*.html",
-   "pretest": "npm run eslint && npm run htmlhint",
-   "deploy": "gh-pages -d src/" 
+    "test": "jest --coverage",
+    "eslint": "eslint --ext .js src/ test/",
+    "htmlhint": "htmlhint src/*.html",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "deploy": "gh-pages -d src/"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,5 @@
     "gh-pages": "^2.0.1",
     "htmlhint": "^0.11.0",
     "jest": "^24.8.0"
-    // npmjs.com dependencias para recargar pagina auto:reload
   }
 }
