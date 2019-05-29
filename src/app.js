@@ -1,3 +1,4 @@
+// de Gelen
  window.load;
  document.getElementById("logInGoogle").addEventListener("click", () =>{
     authGoogle();
@@ -28,40 +29,41 @@
     });
   }
 
+//de maria
 
-  // const logIn = () => {
-    
-  //   document.getElementById('root').innerHTML = 
-  //   `<div class="form col-4 col-6-sm">
-  //     <form action="">
-  //         email 
-  //       <br>
-  //       <input type="email">
-  //       <br>
-  //         contraseña 
-  //       <br>
-  //       <input type="password">
-  //       <br>
-  //       <input type="submit" value="entrar">
-  //     </form>
-  //   </div>`
-  // }
-  // document.getElementById('logIn').addEventListener('click', () => {
-  //   logIn();
-  // });
-  //obtener elementos
-// const txtEmail = document.getElementById('txtEmail');
-// const txtPassword = document.getElementById('txtPassword');
-// const btnLogin = document.getElementById('btnLogin');
-// const btnSignUp = document.getElementById('btnSignUp');
-// const btnLogout = document.getElementById('btnLogout');
-// // añadir evento login
-// btnLogin.addEventListener('click', e=>{
-// // obtener email y pass
-// const email = txtEmail.value;
-// const pass = txtPassword.value;
-// const auth = firebase.auth();
-// // sign in
-// const promise = auth.signInWithEmailAndPassword(email, pass);
-// promise.catch(e=> console.log(e.message))
-// });
+const txtEmail = document.getElementById('txtEmail');
+const txtPassword = document.getElementById('txtPassword');
+const btnLogin = document.getElementById('btnLogin');
+const btnSignUp = document.getElementById('btnSignUp');
+const btnLogout = document.getElementById('btnLogout');
+// añadir evento login
+btnLogin.addEventListener('click', e=>{
+// obtener email y pass
+const email = txtEmail.value;
+const pass = txtPassword.value;
+const auth = firebase.auth();
+// sign in
+const promise = auth.signInWithEmailAndPassword(email, pass);
+promise.catch(e=> console.log(e.message))
+});
+// añadir evento sign up
+btnSignUp.addEventListener('click', e => {
+  // obtener email y pass
+  //TODO: comprobar que email sea real
+const email = txtEmail.value;
+const pass = txtPassword.value;
+const auth = firebase.auth();
+//Sign in
+const promise = auth.createUserWithEmailAndPassword(email, pass);
+promise.catch(e=> console.log(e.message))
+});
+
+btnLogout.addEventListener('click', e => {
+  firebase.auth().signOut();
+})
+
+//Añadir un listener en tiempo real
+firebase.auth().onAuthStateChanged( firebaseUser =>{
+  
+})
+
