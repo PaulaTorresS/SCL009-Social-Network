@@ -1,4 +1,4 @@
-  document.getElementById("logInGoogle").addEventListener ("click", () =>{
+  document.getElementById("logInGoogle").addEventListener("click", () =>{
     authGoogle();
   })
   const authGoogle = () => {
