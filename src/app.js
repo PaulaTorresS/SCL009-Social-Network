@@ -1,4 +1,5 @@
-  document.getElementById("logInGoogle").addEventListener ("click", () =>{
+ window.load;
+ document.getElementById("logInGoogle").addEventListener("click", () =>{
     authGoogle();
   })
   const authGoogle = () => {
@@ -49,18 +50,18 @@
   //   logIn();
   // });
   //obtener elementos
-const txtEmail = document.getElementById('txtEmail');
-const txtPassword = document.getElementById('txtPassword');
-const btnLogin = document.getElementById('btnLogin');
-const btnSignUp = document.getElementById('btnSignUp');
-const btnLogout = document.getElementById('btnLogout');
-// añadir evento login
-btnLogin.addEventListener('click', e=>{
-// obtener email y pass
-const email = txtEmail.value;
-const pass = txtPassword.value;
-const auth = firebase.auth();
-// sign in
-const promise = auth.signInWithEmailAndPassword(email, pass);
-promise.catch(e=> console.log(e.message))
-});
+// const txtEmail = document.getElementById('txtEmail');
+// const txtPassword = document.getElementById('txtPassword');
+// const btnLogin = document.getElementById('btnLogin');
+// const btnSignUp = document.getElementById('btnSignUp');
+// const btnLogout = document.getElementById('btnLogout');
+// // añadir evento login
+// btnLogin.addEventListener('click', e=>{
+// // obtener email y pass
+// const email = txtEmail.value;
+// const pass = txtPassword.value;
+// const auth = firebase.auth();
+// // sign in
+// const promise = auth.signInWithEmailAndPassword(email, pass);
+// promise.catch(e=> console.log(e.message))
+// });
