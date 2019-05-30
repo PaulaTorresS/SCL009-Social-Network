@@ -1,3 +1,7 @@
 node_modules/
+<<<<<<< HEAD
 coverage/
 vs_code/
+=======
+coverage/
+>>>>>>> cb3b333355334951dd67136aeaa2c23000fe72dc

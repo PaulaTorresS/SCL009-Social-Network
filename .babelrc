@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
 "plugins": ["@babel/plugin-transform-modules-commonjs"]
+=======
+ "plugins": ["@babel/plugin-transform-modules-commonjs"]
+>>>>>>> cb3b333355334951dd67136aeaa2c23000fe72dc
 }
