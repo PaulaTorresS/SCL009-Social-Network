@@ -64,6 +64,12 @@ btnLogout.addEventListener('click', e => {
 
 //Añadir un listener en tiempo real
 firebase.auth().onAuthStateChanged( firebaseUser =>{
-  
+  if(firebaseUser){
+    console.log(firebaseUser);
+    btnLogout.classList.remove('hide')
+  } else{
+    console.log('no logeado');
+    btnLogout.classList.add('hide');
+  }
 })
 
