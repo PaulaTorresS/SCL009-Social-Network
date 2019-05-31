@@ -1,8 +1,9 @@
 export const logoutMessage = () => {
-	console.log("Goodbye");
+    console.log("GoodBye");
 }
 
+
 export const user = {
-	name: 'ale',
-	job: 'coach'
+    name: "ale",
+    job: "coach"
 }
