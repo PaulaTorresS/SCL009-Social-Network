@@ -1,4 +1,5 @@
 import { signIn, authGoogle } from "./../js/auth.js";
+import { templateHome } from "./templateHome.js";
 
 export const templateLogin = () =>{
 
@@ -18,10 +19,14 @@ export const templateLogin = () =>{
 		let email = document.getElementById('txtEmail').value;
 		let pass = document.getElementById('txtPassword').value;
 		let userSignIn = signIn(email,pass);
+		templateHome();
+		window.location.hash = '#/home';
 	});
 
 	 document.getElementById('logInGoogle').addEventListener('click',()=>{
         authGoogle();
+        templateHome();
+		window.location.hash = '#/home';
 	});
 }
 
