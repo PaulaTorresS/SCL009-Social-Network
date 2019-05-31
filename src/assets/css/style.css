@@ -1,4 +1,8 @@
-.col-4{
+body{
+	background:#EAF2E3;
+}
+.col-12{
+	align-content: center;
 	text-align: center;
 }
 .form{
@@ -12,8 +16,14 @@ label{
 	display: block;
 }
 input{
-	border-radius: 10px;
+
+	border-radius: 8px;
+	width: 15em;
 }
 .hide{
 	display: none;
+}
+img{
+	display: block;
+	max-width: 100%;
 }
