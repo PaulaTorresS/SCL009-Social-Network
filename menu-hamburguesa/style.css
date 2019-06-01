@@ -1,12 +1,15 @@
+body{
+	background: #EAF2E3;
+}
 .container{
-	width: 95%;
+	width: 100%;
 	max-width: 1000px;
 	margin: 0 auto; 
 }
 header{
-	background-color: blue;
+	height: 100px;
+	background-color: #F4F1BB;
 	color: white;
-	padding: 1em 0;
 	position: relative;
 }
 header::after{
@@ -15,19 +18,12 @@ header::after{
 	display: block;
 
 }
-.logo{
-	float: left;
-	font-size: 1rem;
-	margin: 0;
-	text-transform: uppercase;
-	font-weight: 700;
 
-}
 .site-nav{
 	top: 100%;
 	right: 0;
 	position: absolute;
-	background-color: green;
+	background-color: #ff637d;
 	clip-path: circle(0px at top right);
 	transition: clip-path ease-in-out 700ms;
 }
@@ -41,27 +37,28 @@ header::after{
 
 }
 .site-nav li{
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #f4f1bb;
 
 }
 .site-nav li:last-child{
 	border-bottom: none;
 }
 .site-nav a{
-	color: white;
+	text-align: center;
+	color: #eaf2e3;
 	display: block;
-	padding: 2em 6em;
+	padding: 1em 4em;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 .site-nav a:hover,
 .site-nav a:focus{
-	background: red;
-	color: yellow;
+	background: #66d7d1;
+	color: #ff637d;
 
 }
 .menu-toggle{
-	
+	margin-top: 1.4em;
 	padding: 1em;
 	position: absolute;
 	top:0.5em;
@@ -84,7 +81,7 @@ header::after{
 .hamburger::after{
 	content: '';
 	display: block;
-	background: red;
+	background: #ff637d;
 	height: 3px;
 	width: 1.75em;
 	border-radius: 3px;
@@ -99,6 +96,9 @@ header::after{
 	transform: translateY(3px);
 }
 @media (min-width: 700px){
+	header{
+		height: auto;
+	}
 	.menu-toggle{
 		display: none;
 
@@ -116,12 +116,20 @@ header::after{
 		border:none;
 	}
 	.site-nav a{
+		margin-top: 3.5em;
+		color:#66d7d1;
+		font-size: 13px;
 		padding: 0;
-		margin-left: 3em; 
+		margin-left: 1em; 
 	}
 	.site-nav a:hover,
 	.site-nav a:focus{
 		background: transparent;
 
 	}
+}
+img{
+	max-width: 70%;
+	margin-top: -15px;
+	margin-left: -40px;
 }

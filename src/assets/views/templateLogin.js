@@ -9,9 +9,9 @@ export const templateLogin = () =>{
 		<div class="row">
 			
 			<div class="col-12"><input  id="txtEmail" type="email" placeholder="email"></div>
-			<div class="col-12"><p id="emailerror"></p></div>
+			<p class="col-12 error" id="emailerror"></p>
 			<div class="col-12"><input type="password" placeholder="contraseña" id="txtPassword"></div>
-			<div class="col-12"><p id="passerror"></p></div>
+			<p class="col-12 error" id="passerror"></p>
 			<div class="col-12"><input type="button" id="logIn" value="Iniciar sesión"></div>
 			<div class="col-12"><input type="button" id="logInGoogle" value="Acceder con Google"></div>
 			<div class="col-12"><input type="button" id="signUp" value="Registrarse"></div>
@@ -24,23 +24,29 @@ export const templateLogin = () =>{
 		let pass = document.getElementById('txtPassword').value;
 		let userSignIn = signIn(email,pass);
 		 /*IMPRESION VÁLIDACIONES EN EL DOM*/
+		const emailerror = document.getElementById('emailerror');
+		const passerror = document.getElementById('passerror');
         if(email==="" || !validateEmailSignIn(email)){
-            document.getElementById('emailerror').innerHTML=`Debes ingresar un correo válido.`;
+        	emailerror.style.display = "block";
+            emailerror.innerHTML=`Debes ingresar un correo válido.`;
         }else{
-            document.getElementById('emailerror').innerHTML='';
+        	emailerror.style.display = "none";
+            emailerror.innerHTML='';
         }
         
         if(pass==="" || pass.length<6){
-            document.getElementById('passerror').innerHTML=`Debes ingresar una contraseña con minimo 6 caracteres.`;
+        	passerror.style.display = "block";
+            passerror.innerHTML=`Debes ingresar una contraseña con minimo 6 caracteres.`;
         }else{
-            document.getElementById('passerror').innerHTML='';
+        	passerror.style.display = "none";
+            passerror.innerHTML='';
         }
 
-        if(userSignIn==="OK"){
-            console.log("usuario Ok");
-        } else {
-            console.log(userSignIn);
-        }
+        // if(userSignIn==="OK"){
+        //     console.log("usuario Ok");
+        // } else {
+        //     console.log(userSignIn);
+        // }
 	});
 
 	 document.getElementById('logInGoogle').addEventListener('click',()=>{
