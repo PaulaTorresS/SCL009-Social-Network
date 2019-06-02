@@ -6,8 +6,16 @@ export const templateLogin = () =>{
 
 	document.getElementById('root').innerHTML =
 		 /*html*/ `
-		<div class="row">
-			
+		<header id="templatelogin">
+			<div class="logo row">
+				<div class="col-12"> 
+					<center>
+						<img src="assets/img/mamasabe.png" alt="logo">
+				   	</center>
+				</div>
+			</div>
+		</header>
+		<div class="row templatelogin">
 			<div class="col-12"><input  id="txtEmail" type="email" placeholder="email"></div>
 			<p class="col-12 error" id="emailerror"></p>
 			<div class="col-12"><input type="password" placeholder="contraseña" id="txtPassword"></div>
