@@ -26,6 +26,7 @@ header::after{
 	background-color: #ff637d;
 	clip-path: circle(0px at top right);
 	transition: clip-path ease-in-out 700ms;
+	z-index: 1;
 }
 .site-nav-open{
 	clip-path: circle(150% at top right);
@@ -132,4 +133,60 @@ img{
 	max-width: 70%;
 	margin-top: -15px;
 	margin-left: -40px;
+}
+
+/*perfil*/
+.perfil img{
+	display: block;
+	
+	float: left;
+	margin-top: 0vh;
+	margin-left:.5vw;
+	border:1px solid #66d7d1;
+	border-radius: 50%;
+	max-width: 100%;
+}
+.perfil{
+	position: relative;
+}
+@media (min-width: 700px){
+	.perfil img{
+		max-width: 100%;
+	}
+}
+.perfil-info-string{
+	color: #66d7d1;
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+	border: solid 1px #66d7d1;
+	border-radius: 30px;
+	padding: .5em;
+	margin-bottom: 10px;
+
+}
+section#perfil{
+	margin-top: 2vh;
+}
+ .fa-edit{
+ 	color:#66d7d1; 
+ 	font-size: 1rem;
+	margin-left: 1rem;
+	cursor: pointer;
+}
+.fa-camera{
+	display: block;
+	cursor: pointer;
+	font-size: 1.5rem;
+	color:#66d7d1;
+	position: absolute;
+	top:90px;
+	left:90px;
+}
+@media (min-width: 700px){
+	.fa-camera{
+	font-size: 2rem;
+	top:100px;
+	left:130px;
+}
 }
