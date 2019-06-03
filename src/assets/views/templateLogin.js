@@ -1,6 +1,7 @@
 import { signIn, authGoogle } from "./../js/auth.js";
 //import { templateHome } from "./templateHome.js";
 import { validateEmailSignIn } from "../js/validation.js";
+import { templateRegister } from "./templateRegister.js" 
 
 export const templateLogin = () =>{
 
@@ -30,7 +31,7 @@ export const templateLogin = () =>{
 	document.getElementById('logIn').addEventListener('click', () => {
 		let email = document.getElementById('txtEmail').value;
 		let pass = document.getElementById('txtPassword').value;
-		let userSignIn = signIn(email,pass);
+		signIn(email,pass);
 		 /*IMPRESION VÁLIDACIONES EN EL DOM*/
 		const emailerror = document.getElementById('emailerror');
 		const passerror = document.getElementById('passerror');
@@ -59,6 +60,11 @@ export const templateLogin = () =>{
 
 	 document.getElementById('logInGoogle').addEventListener('click',()=>{
         authGoogle();
+
+	});
+	  document.getElementById('signUp').addEventListener('click', ()=>{
+	  	templateRegister();
+	  	window.location.hash = '#/register';
 
 	});
 }

@@ -30,6 +30,9 @@ const showView = (hash) =>{
         	break;
         case 'profile':
             templateProfile();
+            break;
+        case 'register':
+            templateRegister();
             break;    
         default:
             mainRoot.innerHTML = `<p>Error 404</p>`
