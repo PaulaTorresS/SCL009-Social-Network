@@ -1,8 +1,5 @@
-import { logoutMessage, user } from './logout.js'
-logoutMessage();
-console.log(user);
-
 import { validateSignIn } from './validation.js';
+
 
 export const signIn = (email,pass) => {
   if(validateSignIn(email,pass)){
