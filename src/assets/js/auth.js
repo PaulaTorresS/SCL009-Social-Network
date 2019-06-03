@@ -1,13 +1,31 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { logoutMessage, user } from './logout.js'
 logoutMessage();
 console.log(user);
 =======
+=======
+import { validateSignIn } from './validation.js';
+
+
+>>>>>>> cdcdb7282ae04aae4049cb84091c243150450200
 export const signIn = (email,pass) => {
-  const auth = firebase.auth();
-  // sign in
-  const promise = auth.signInWithEmailAndPassword(email, pass);
-  promise.catch(e=> console.log(e.message))
+  if(validateSignIn(email,pass)){
+    const auth = firebase.auth();
+    auth.signInWithEmailAndPassword(email,pass)
+    .then(()=>{
+      alert("Has iniciado sesión con exito");
+      window.location.hash='#/home';
+    })
+    .catch((error)=>{
+       // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(error.message);
+    })
+  }else{
+     alert ("Error en el ingreso del usuario");
+  }
 }
 
 
@@ -25,6 +43,8 @@ export const authGoogle = () => {
       }
       // The signed-in user info.
       var user = result.user;
+      alert("Has iniciado sesión con exito");
+    window.location.hash='#/home';
     }).catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -36,4 +56,19 @@ export const authGoogle = () => {
       // ...
     });
   }
+<<<<<<< HEAD
 >>>>>>> 7a317156bb5cb30ee46831b368488608da43cb93
+=======
+
+/*Función signOut(), que sirve para que cuando el usuario cierre sesión, lo dirigia a la pantalla de inicio*/
+
+export const signOut = () =>{
+  firebase.auth().signOut()
+  .then(function() {
+    alert("Has cerrado tu sesión en MamaSabe");
+    window.location.hash='';
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+>>>>>>> cdcdb7282ae04aae4049cb84091c243150450200

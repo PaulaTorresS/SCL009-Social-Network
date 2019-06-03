@@ -1,8 +1,3 @@
-// de Gelen
-
-
-//de maria
-
 // const txtEmail = document.getElementById('txtEmail');
 // const txtPassword = document.getElementById('txtPassword');
 // const btnLogin = document.getElementById('btnLogin');
@@ -53,9 +48,12 @@ import { initRoute } from './route.js';
 //import { observer } from './assets/js/auth.js'
 import { firebaseInit } from './assets/js/firebaseInit.js';
 
+
 const init = () => {
+	
     firebaseInit();
     initRoute();
+    
     //observer();    
 }
 

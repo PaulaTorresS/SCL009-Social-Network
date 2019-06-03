@@ -2,9 +2,11 @@
 
 //importación de los templates constridos
 import { templateLogin } from './assets/views/templateLogin.js';
+import { templateHome } from './assets/views/templateHome.js';
+import { templateProfile } from './assets/views/templateProfile.js';
 
 const changeRoute = (hash) =>{
-	if (hash === '') {
+	if (hash === '' || hash === '#/home') {
         //le pasa como parametro #/a la función showTemplate
         return showView(hash);
 	}
@@ -23,7 +25,12 @@ const showView = (hash) =>{
         case '':
             templateLogin();
             break;
-        
+        case 'home':
+        	templateHome();
+        	break;
+        case 'profile':
+            templateProfile();
+            break;    
         default:
             mainRoot.innerHTML = `<p>Error 404</p>`
     }
