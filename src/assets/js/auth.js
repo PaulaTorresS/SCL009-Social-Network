@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { logoutMessage, user } from './logout.js'
 logoutMessage();
 console.log(user);
-=======
-=======
+
 import { validateSignIn } from './validation.js';
 
-
->>>>>>> cdcdb7282ae04aae4049cb84091c243150450200
 export const signIn = (email,pass) => {
   if(validateSignIn(email,pass)){
     const auth = firebase.auth();
@@ -56,9 +51,6 @@ export const authGoogle = () => {
       // ...
     });
   }
-<<<<<<< HEAD
->>>>>>> 7a317156bb5cb30ee46831b368488608da43cb93
-=======
 
 /*Función signOut(), que sirve para que cuando el usuario cierre sesión, lo dirigia a la pantalla de inicio*/
 
@@ -71,4 +63,3 @@ export const signOut = () =>{
     // An error happened.
   });
 }
->>>>>>> cdcdb7282ae04aae4049cb84091c243150450200
