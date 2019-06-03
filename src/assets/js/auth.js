@@ -36,7 +36,7 @@ export const authGoogle = () => {
       // The signed-in user info.
       var user = result.user;
       alert("Has iniciado sesión con exito");
-    window.location.hash='#/home';
+      window.location.hash='#/home';
     }).catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -55,19 +55,7 @@ export const observer = () => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log('existe usuario activo')
-      // if(!user.displayName && user.email){
-      //   getName(user.email);
-      // }      
-      // let photoURL = "assets/Images/logoVerde.png";
-      // if(user.photoURL){
-      //   photoURL= user.photoURL;
-      // }       
-      // if (document.getElementById("userphoto")){
-      //   document.getElementById("userphoto").src = photoURL;
-      // } 
-      // if (document.getElementById("useremail")){
-      //   document.getElementById("useremail").innerHTML = user.email;
-      // }
+     
     } else {
       console.log('no existe usuario activo');
       window.location.hash="";
@@ -86,3 +74,14 @@ export const signOut = () =>{
     // An error happened.
   });
 }
+
+// firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
+//  .then(function() {
+//    // The link was successfully sent. Inform the user.
+//    // Save the email locally so you don't need to ask the user for it again
+//    // if they open the link on the same device.
+//    window.localStorage.setItem('emailForSignIn', email);
+//  })
+//  .catch(function(error) {
+//    // Some error occurred, you can inspect the code: error.code
+//  });

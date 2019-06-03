@@ -40,9 +40,7 @@ export const templateHome = () =>{
 		</header>
 		<main id="main">
 		</main>
-		<footer></footer>
-
-												`
+		<footer></footer>												`
 	changeClass();
 	document.getElementById('btn-logout').addEventListener('click', () => {
 		signOut();
