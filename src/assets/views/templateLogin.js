@@ -1,5 +1,5 @@
 import { signIn, authGoogle } from "./../js/auth.js";
-import { templateHome } from "./templateHome.js";
+//import { templateHome } from "./templateHome.js";
 import { validateEmailSignIn } from "../js/validation.js";
 
 export const templateLogin = () =>{
