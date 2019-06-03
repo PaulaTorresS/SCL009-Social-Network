@@ -52,9 +52,7 @@ import { firebaseInit } from './assets/js/firebaseInit.js';
 const init = () => {
 	
     firebaseInit();
-    initRoute();
-    
-    //observer();    
+    initRoute();       
 }
 
 
