@@ -50,11 +50,11 @@ export const templateLogin = () =>{
             passerror.innerHTML='';
         }
 
-        // if(userSignIn==="OK"){
-        //     console.log("usuario Ok");
-        // } else {
-        //     console.log(userSignIn);
-        // }
+        if(userSignIn==="OK"){
+            console.log("usuario Ok");
+        } else {
+            console.log(userSignIn);
+        }
 	});
 
 	 document.getElementById('logInGoogle').addEventListener('click',()=>{

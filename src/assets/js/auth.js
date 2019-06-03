@@ -49,6 +49,32 @@ export const authGoogle = () => {
     });
   }
 
+
+/*Función Observador, que verifica que el usuario se encuentra logueado*/
+export const observer = () => {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log('existe usuario activo')
+      // if(!user.displayName && user.email){
+      //   getName(user.email);
+      // }      
+      // let photoURL = "assets/Images/logoVerde.png";
+      // if(user.photoURL){
+      //   photoURL= user.photoURL;
+      // }       
+      // if (document.getElementById("userphoto")){
+      //   document.getElementById("userphoto").src = photoURL;
+      // } 
+      // if (document.getElementById("useremail")){
+      //   document.getElementById("useremail").innerHTML = user.email;
+      // }
+    } else {
+      console.log('no existe usuario activo');
+      window.location.hash="";
+    }
+  });
+}
+
 /*Función signOut(), que sirve para que cuando el usuario cierre sesión, lo dirigia a la pantalla de inicio*/
 
 export const signOut = () =>{
