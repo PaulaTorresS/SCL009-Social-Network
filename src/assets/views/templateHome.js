@@ -1,5 +1,6 @@
 import { signOut } from './../js/auth.js';
-
+import { templateProfile } from './templateProfile.js';
+import { changeClass } from './../js/menu.js';
 export const templateHome = () =>{
 	document.getElementById('root').innerHTML = `
 		<header id="home">
@@ -7,7 +8,7 @@ export const templateHome = () =>{
 			<nav id="site-nav" class="site-nav">
 				<ul>
 					<li>
-						<a href="">
+						<a href="" id="btn-profile">
 							perfil
 						</a>
 					</li>
@@ -23,7 +24,7 @@ export const templateHome = () =>{
 					</li>
 					<li>
 						<a href="">
-							tabla de papas
+							tabla de papás
 						</a>
 					</li>
 					<li>
@@ -37,8 +38,19 @@ export const templateHome = () =>{
 				<div class="hamburger"></div>
 			</div>
 		</header>
+		<main id="main">
+		</main>
+		<footer></footer>
+
 												`
+	changeClass();
 	document.getElementById('btn-logout').addEventListener('click', () => {
 		signOut();
-	})
+	});
+	document.getElementById('btn-profile').addEventListener('click', (e)=>{
+		e.preventDefault();
+		templateProfile();
+		window.location.hash = '#/profile';
+	});
+
 }

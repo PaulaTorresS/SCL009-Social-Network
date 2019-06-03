@@ -138,22 +138,40 @@ img{
 /*perfil*/
 .perfil img{
 	display: block;
+	margin: 0;
 	
-	float: left;
-	margin-top: 0vh;
-	margin-left:.5vw;
 	border:1px solid #66d7d1;
 	border-radius: 50%;
-	max-width: 100%;
+	max-width: 50%;
 }
 .perfil{
 	position: relative;
 }
-@media (min-width: 700px){
-	.perfil img{
-		max-width: 100%;
-	}
+
+.fa-camera{
+	display: block;
+	cursor: pointer;
+	font-size: 2rem;
+	color:#66d7d1;
+	position: absolute;
+	top: 80%;
+	left: 46%;
+	transition: .5s;
 }
+.fa-camera:hover,
+.fa-camera:focus{
+	color: #ff637d;
+	transition: .5s;
+}
+
+
+/*@media (min-width: 700px){
+	.fa-camera{
+	font-size: 2rem;
+	top:100px;
+	left:130px;
+}
+}*/
 .perfil-info-string{
 	color: #66d7d1;
 	font-size: 18px;
@@ -174,19 +192,8 @@ section#perfil{
 	margin-left: 1rem;
 	cursor: pointer;
 }
-.fa-camera{
-	display: block;
-	cursor: pointer;
-	font-size: 1.5rem;
-	color:#66d7d1;
-	position: absolute;
-	top:90px;
-	left:90px;
-}
-@media (min-width: 700px){
-	.fa-camera{
-	font-size: 2rem;
-	top:100px;
-	left:130px;
-}
+.fa-edit:hover,
+.fa-edit:focus{
+	color:#ff637d;
+	transition: .5s;
 }
