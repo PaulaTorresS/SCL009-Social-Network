@@ -6,7 +6,7 @@ body{
 	display: block;
 	max-width: 100%;
 }
-.templatelogin{
+.templatelogin, .templateregister{
 	align-content: center;
 	text-align: center;
 }
