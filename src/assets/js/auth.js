@@ -1,12 +1,12 @@
-import { validateNewUser, validateSignIn } from './validation.js';
+import { validateNewUser } from './validation.js';
 
 export const createNewUser = (newUserEmail,newUserPass) => {
   if(validateNewUser(newUserEmail,newUserPass)){
     firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPass)
     .then(()=>{
       emailVerification();
-      alert("El usuario ha sido creado con éxito. Hemos enviado un correo de verificación de cuenta.");
-      window.location.hash='#/home';
+      alert("Hemos enviado un correo de verificación de cuenta.");
+      window.location.hash="";
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -78,6 +78,7 @@ export const observer = () => {
     } else {
       console.log('no existe usuario logueado');
       window.location.hash="";
+      window.onhashchange ="";
     }
   });
 }
@@ -97,7 +98,6 @@ export const signOut = () =>{
 
 function emailVerification() {
   let user = firebase.auth().currentUser;
-
   user.sendEmailVerification().then(function() {
     console.log("enviamos correo");
     // Update successful.

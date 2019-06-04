@@ -19,7 +19,9 @@ export const templateRegister = () => {
 	<p class="col-12 error" id="pass-error"></p>
 	<div class="col-12"><input type="password" placeholder="confirma contraseña" id="signup-confirm"></div>
 	<div class="col-12"><input  id="user-name" type="text" placeholder="nombre"></div>
+	<p class="col-12 error" id="name-error"></p>
 	<div class="col-12"><input  id="user-lastname" type="text" placeholder="apellido"></div>
+	<p class="col-12 error" id="lastname-error"></p>
 	<div class="col-12"><input  id="child-name" type="text" placeholder="nombre de hij@"></div>
 	<input type="button" id="submit" value="Enviar">
 	</div>
@@ -54,6 +56,13 @@ export const templateRegister = () => {
 	        }else{
 	        	document.getElementById('email-error').style.display = "none";
 	           
+	        }
+	        if(newUserName===""){
+	        	document.getElementById('name-error').style.display = "block";
+	        	document.getElementById('name-error').innerHTML = "Debes ingresar tu nombre"
+
+	        }else{
+	        	document.getElementById('name-error').style.display = "none";
 	        }
 	        createNewUser(newUserEmail,newUserPass);
            }

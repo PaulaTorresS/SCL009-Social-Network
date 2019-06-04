@@ -1,8 +1,6 @@
 
-/*2)Validaciones de la función signIn();*/
-
-/*a)Función que valida que el usuario no puede tener input vacios,
-para los parametros definidos en el flujo de la aplicación*/
+//Función que valida que el usuario no puede tener input vacios,
+//para los parametros definidos en el flujo de la aplicación
 export const validateSignIn = (email,pass) => {
   if(email === ""|| pass ==="" || pass.length<6 || !validateEmail(email)){
     return false;
@@ -17,7 +15,7 @@ export const validateEmail = (newUserEmail)=>{
   return regEx.test(newUserEmail);
 }
 
-
+//funcion que valida si los datos de nuevo usario ne estan vacios y email es valido
 export const validateNewUser = (newUserEmail,newUserPass) => {
   if(newUserEmail ==="" || newUserPass ==="" || newUserPass.length<6 || !validateEmail(newUserEmail)){
     return false;
