@@ -46,7 +46,7 @@
 
 import { initRoute } from './route.js';
 import { observer } from './assets/js/auth.js'
-import { firebaseInit } from './assets/js/firebaseInit.js';
+import { firebaseInit } from './assets/js/firebaseinit.js';
 
 
 const init = () => {	
