@@ -3,8 +3,10 @@ body{
 }
 /*estilo de pagina de inicio(sign in)*/
 #templatelogin img{
-	display: block;
-	max-width: 100%;
+	/*display: block;*/
+	max-width: 50%;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 .templatelogin, .templateregister{
 	align-content: center;

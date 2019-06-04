@@ -11,19 +11,26 @@ export const templateLogin = () =>{
 			<div class="logo row">
 				<div class="col-12"> 
 					<center>
-						<img src="assets/img/mamasabe.png" alt="logo">
+						<img src="assets/img/logo-mama-sabe.png" alt="Logo Mama Sabe">
 				   	</center>
 				</div>
 			</div>
 		</header>
 		<div class="row templatelogin">
-			<div class="col-12"><input  id="txtEmail" type="email" placeholder="email"></div>
+			<div class="col-12">
+				<p class="col-12" id=""><strong>Accede con tu Cuenta</strong></p>	
+				<input  id="txtEmail" type="email" placeholder="email">
+			</div>
 			<p class="col-12 error" id="emailerror"></p>
 			<div class="col-12"><input type="password" placeholder="contraseña" id="txtPassword"></div>
 			<p class="col-12 error" id="passerror"></p>
 			<div class="col-12"><input type="button" id="logIn" value="Iniciar sesión"></div>
 			<div class="col-12"><input type="button" id="logInGoogle" value="Acceder con Google"></div>
-			<div class="col-12"><input type="button" id="signUp" value="Registrarse"></div>
+			<br>
+			<div class="col-12">
+			<p class="col-12" id=""><i>¿Aun no tienes Cuenta?</i></p>
+				<input type="button" id="signUp" value="Registrarse">
+			</div>
 		</div>
 
 		`;
