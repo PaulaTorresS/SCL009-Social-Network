@@ -1,4 +1,6 @@
 import { validateNewUser } from './validation.js';
+import { templateLogin } from './../views/templateLogin.js';
+
 
 export const createNewUser = (newUserEmail,newUserPass) => {
   if(validateNewUser(newUserEmail,newUserPass)){
@@ -6,12 +8,20 @@ export const createNewUser = (newUserEmail,newUserPass) => {
     .then(()=>{
       emailVerification();
       alert("Hemos enviado un correo de verificación de cuenta.");
-      window.location.hash="";
+      window.location.hash = "";
+      templateLogin();
+      
     })
     .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      console.log(errorCode);
+      if (errorCode === "auth/email-already-in-use"){
+        alert("Este correo ya ha sido registrado");
+        document.getElementById('signup-email').value = '';
+        document.getElementById('signup-email').focus();
+      }
       // ...
     });
   }else{
@@ -79,6 +89,7 @@ export const observer = () => {
       console.log('no existe usuario logueado');
       window.location.hash="";
       window.onhashchange ="";
+      templateLogin();
     }
   });
 }
