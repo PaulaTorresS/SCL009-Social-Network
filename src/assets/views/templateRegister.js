@@ -1,5 +1,6 @@
 import { validateEmail } from "../js/validation.js";
 import { createNewUser } from "../js/auth.js";
+import { templateLogin } from "./templateLogin.js";
 
 export const templateRegister = () => {
 	document.getElementById('root').innerHTML = `
@@ -22,8 +23,9 @@ export const templateRegister = () => {
 	<p class="col-12 error" id="name-error"></p>
 	<div class="col-12"><input  id="user-lastname" type="text" placeholder="apellido"></div>
 	<p class="col-12 error" id="lastname-error"></p>
-	<div class="col-12"><input  id="child-name" type="text" placeholder="nombre de hij@"></div>
+	<div class="col-12"><input  id="child-name" type="text" placeholder="nombre de hij@(opcional)"></div>
 	<input type="button" id="submit" value="Enviar">
+	<input type="button" id="back" value="Volver">
 	</div>
 												`;
 	document.getElementById('submit').addEventListener('click', ()=>{
@@ -41,7 +43,7 @@ export const templateRegister = () => {
            	document.getElementById('signup-pass').value = '';
            	document.getElementById('signup-confirm').value ='';
            }else{
-           	document.getElementById('pass-error').style.display = "none";
+           	 document.getElementById('pass-error').style.display = "none";
            	 if(newUserPass === "" || newUserPass.length<6){
 	        	document.getElementById('pass-error').style.display = "block";
 	            document.getElementById('pass-error').innerHTML=`Debes ingresar una contraseña con minimo 6 caracteres.`;
@@ -55,19 +57,29 @@ export const templateRegister = () => {
 	        document.getElementById('signup-email').value = '';
 	        }else{
 	        	document.getElementById('email-error').style.display = "none";
-	           
-	        }
-	        if(newUserName===""){
+
+	           	if(newUserName===""){
 	        	document.getElementById('name-error').style.display = "block";
 	        	document.getElementById('name-error').innerHTML = "Debes ingresar tu nombre"
+		       	}else{
+		       		document.getElementById('name-error').style.display = "none";
+		       		if(newUserLastName === ""){
+		       			document.getElementById('lastname-error').style.display="block";
+		       			document.getElementById('lastname-error').innerHTML = "Debes ingresar tu apellido";
+		       		}else{
+		       			document.getElementById('lastname-error').style.display = "none";
+		        		createNewUser(newUserEmail,newUserPass);
 
-	        }else{
-	        	document.getElementById('name-error').style.display = "none";
+		       		}
+	        	}
 	        }
-	        createNewUser(newUserEmail,newUserPass);
-           }
-         
 	        
+        }
+               
+	})	
 
-	})											
+	document.getElementById('back').addEventListener('click', ()=>{
+		templateLogin();
+		window.location.hash = "";
+	}) 										
 }
