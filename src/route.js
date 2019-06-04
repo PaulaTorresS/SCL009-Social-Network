@@ -8,7 +8,7 @@ import { templateRegister } from './assets/views/templateRegister.js';
 import { templateLogin } from './assets/views/templateLogin.js';
 
 const changeRoute = (hash) =>{
-	if (hash === '' || hash === '#/home') {
+	if (hash === '' || hash === '#/home' || hash === '#/register' || hash === '#/profile') {
         //le pasa como parametro #/a la función showTemplate
         return showView(hash);
 	}

@@ -49,8 +49,7 @@ import { observer } from './assets/js/auth.js'
 import { firebaseInit } from './assets/js/firebaseInit.js';
 
 
-const init = () => {
-	
+const init = () => {	
     firebaseInit();
     initRoute();
     observer();       
