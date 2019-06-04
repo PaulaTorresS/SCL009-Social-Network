@@ -45,7 +45,7 @@
 //1. Llamado a la inicialización de la ruta (route) y llamado al template de inicio (templateSignIn)
 
 import { initRoute } from './route.js';
-//import { observer } from './assets/js/auth.js'
+import { observer } from './assets/js/auth.js'
 import { firebaseInit } from './assets/js/firebaseInit.js';
 
 
@@ -53,8 +53,7 @@ const init = () => {
 	
     firebaseInit();
     initRoute();
-    
-    //observer();    
+    observer();       
 }
 
 

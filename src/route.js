@@ -1,9 +1,11 @@
 //Configuración de las rutas
 
 //importación de los templates constridos
-import { templateLogin } from './assets/views/templateLogin.js';
+// import { templateLogin } from './assets/views/templateLogin.js';
 import { templateHome } from './assets/views/templateHome.js';
 import { templateProfile } from './assets/views/templateProfile.js';
+import { templateRegister } from './assets/views/templateRegister.js';
+import { templateLogin } from './assets/views/templateLogin.js';
 
 const changeRoute = (hash) =>{
 	if (hash === '' || hash === '#/home') {
@@ -30,6 +32,9 @@ const showView = (hash) =>{
         	break;
         case 'profile':
             templateProfile();
+            break;
+        case 'register':
+            templateRegister();
             break;    
         default:
             mainRoot.innerHTML = `<p>Error 404</p>`
