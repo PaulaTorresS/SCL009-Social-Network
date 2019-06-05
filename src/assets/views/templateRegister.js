@@ -14,18 +14,38 @@ export const templateRegister = () => {
 			</div>
 		</header>
 	<div class="row templateregister">											
-	<div class="col-12"><input  id="signup-email" type="email" placeholder="email"></div>
-	<p class="col-12 error" id="email-error"></p>
-	<div class="col-12"><input type="password" placeholder="contraseña" id="signup-pass"></div>
-	<p class="col-12 error" id="pass-error"></p>
-	<div class="col-12"><input type="password" placeholder="confirma contraseña" id="signup-confirm"></div>
-	<div class="col-12"><input  id="user-name" type="text" placeholder="nombre"></div>
-	<p class="col-12 error" id="name-error"></p>
-	<div class="col-12"><input  id="user-lastname" type="text" placeholder="apellido"></div>
-	<p class="col-12 error" id="lastname-error"></p>
-	<div class="col-12"><input  id="child-name" type="text" placeholder="nombre de hij@(opcional)"></div>
-	<input type="button" id="submit" value="Enviar">
-	<input type="button" id="back" value="Volver">
+		<div class="col-12">
+			<input  id="signup-email" type="email" placeholder="email">
+		</div>
+		<p class="col-12 error" id="email-error">
+		</p>
+		<div class="col-12">
+			<input type="password" placeholder="contraseña" id="signup-pass">
+		</div>
+		<div class="col-12">
+			<input type="password" placeholder="confirma contraseña" id="signup-confirm">
+		</div>
+		<p class="col-12 error" id="pass-error">
+		</p>
+		<div class="col-12">
+			<input  id="user-name" type="text" placeholder="nombre">
+		</div>
+		<p class="col-12 error" id="name-error">
+		</p>
+		<div class="col-12">
+			<input  id="user-lastname" type="text" placeholder="apellido">
+		</div>
+		<p class="col-12 error" id="lastname-error">
+		</p>
+		<div class="col-12">
+			<input  id="child-name" type="text" placeholder="nombre de hij@(opcional)">
+		</div>
+		<div  class="col-12">
+			<input type="button" id="submit" value="Enviar">
+		</div>
+		<div class="col-12">
+			<input  type="button" id="back" value="Volver">
+		</div>
 	</div>
 												`;
 	document.getElementById('submit').addEventListener('click', ()=>{
@@ -39,9 +59,10 @@ export const templateRegister = () => {
            //validacion de dom:
            if(newUserPass !== newUserPassConfirm){
            	document.getElementById('pass-error').style.display = "block";
-           	document.getElementById('pass-error').innerHTML = "Contraseñas no coinciden!";
+           	document.getElementById('pass-error').innerHTML = "Contraseñas no coinciden:(";
            	document.getElementById('signup-pass').value = '';
            	document.getElementById('signup-confirm').value ='';
+           	document.getElementById('signup-pass').focus();
            }else{
            	 document.getElementById('pass-error').style.display = "none";
            	 if(newUserPass === "" || newUserPass.length<6){
@@ -55,17 +76,20 @@ export const templateRegister = () => {
         	document.getElementById('email-error').style.display = "block";
             document.getElementById('email-error').innerHTML="Debes ingresar un correo válido.";
 	        document.getElementById('signup-email').value = '';
+	        document.getElementById('signup-email').focus();
 	        }else{
 	        	document.getElementById('email-error').style.display = "none";
 
 	           	if(newUserName===""){
 	        	document.getElementById('name-error').style.display = "block";
-	        	document.getElementById('name-error').innerHTML = "Debes ingresar tu nombre"
+	        	document.getElementById('name-error').innerHTML = "Debes ingresar tu nombre";
+	        	document.getElementById('user-name').focus();
 		       	}else{
 		       		document.getElementById('name-error').style.display = "none";
 		       		if(newUserLastName === ""){
 		       			document.getElementById('lastname-error').style.display="block";
 		       			document.getElementById('lastname-error').innerHTML = "Debes ingresar tu apellido";
+		       			document.getElementById('user-lastname').focus();
 		       		}else{
 		       			document.getElementById('lastname-error').style.display = "none";
 		        		createNewUser(newUserEmail,newUserPass);
