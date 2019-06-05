@@ -39,7 +39,7 @@ export const templateRegister = () => {
            //validacion de dom:
            if(newUserPass !== newUserPassConfirm){
            	document.getElementById('pass-error').style.display = "block";
-           	document.getElementById('pass-error').innerHTML = "Contraseñas no coinciden:(";
+           	document.getElementById('pass-error').innerHTML = "Contraseñas no coinciden :(";
            	document.getElementById('signup-pass').value = '';
            	document.getElementById('signup-confirm').value ='';
            	document.getElementById('signup-pass').focus();
