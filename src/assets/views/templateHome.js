@@ -42,7 +42,7 @@ export const templateHome = () =>{
 		</main>
 		<footer></footer>												`
 	changeClass();
-	document.getElementById('btn-logout').addEventListener('click', () => {
+	document.getElementById('btn-logout').addEventListener('click', () => {
 		signOut();
 	});
 	document.getElementById('btn-profile').addEventListener('click', (e)=>{
