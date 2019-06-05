@@ -4,7 +4,7 @@ import { changeClass } from './../js/menu.js';
 export const templateHome = () =>{
 	document.getElementById('root').innerHTML = `
 		<header id="home">
-			<a href="#"><img  src="./../assets/img/mamasabe2.png" alt="logo"></a>			
+			<a href="#"><img  src="./../assets/img/mama-sabe2.png" alt="logo"></a>			
 			<nav id="site-nav" class="site-nav">
 				<ul>
 					<li>

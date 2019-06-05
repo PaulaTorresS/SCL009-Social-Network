@@ -7,7 +7,8 @@ export const createNewUser = (newUserEmail,newUserPass) => {
     firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPass)
     .then(()=>{
       emailVerification();
-      alert("Hemos enviado un correo de verificación de cuenta.");
+      swal ( "¡Felicitaciones!" , " Hemos enviado un correo de verificación de cuenta." , "success" );
+      //alert("Hemos enviado un correo de verificación de cuenta.");
       window.location.hash = "";
       templateLogin();
       
@@ -18,7 +19,8 @@ export const createNewUser = (newUserEmail,newUserPass) => {
       var errorMessage = error.message;
       console.log(errorCode);
       if (errorCode === "auth/email-already-in-use"){
-        alert("Este correo ya ha sido registrado");
+        swal ( "¡Advertencia!" , "Este correo ya se encuentra en uso." , "info");
+        //alert("Este correo ya ha sido registrado");
         document.getElementById('signup-email').value = '';
         document.getElementById('signup-email').focus();
       }
@@ -35,7 +37,8 @@ export const createNewUser = (newUserEmail,newUserPass) => {
 //     const auth = firebase.auth();
 //     auth.signInWithEmailAndPassword(email,pass)
 //     .then(()=>{
-//       alert("Has iniciado sesión con exito");
+//       swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
+//        alert("Has iniciado sesión con exito");
 //       window.location.hash='#/home';
 //     })
 //     .catch((error)=>{
@@ -45,7 +48,8 @@ export const createNewUser = (newUserEmail,newUserPass) => {
 //       console.log(error.message);
 //     })
 //   }else{
-//      alert ("Error en el ingreso del usuario");
+//      swal ( "¡Advertencia!" , "Error en el ingreso del usuario." , "error");
+//        alert ("Error en el ingreso del usuario");
 //   }
 // }
 
@@ -64,7 +68,8 @@ export const createNewUser = (newUserEmail,newUserPass) => {
 //       }
 //       // The signed-in user info.
 //       var user = result.user;
-//       alert("Has iniciado sesión con exito");
+//       swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
+//        alert("Has iniciado sesión con exito");
 //       window.location.hash='#/home';
 //     }).catch(function(error) {
 //       // Handle Errors here.
@@ -99,7 +104,7 @@ export const observer = () => {
 export const signOut = () =>{
   firebase.auth().signOut()
   .then(function() {
-    alert("Chao!");
+    swal("Chao!");
     window.location.hash='';
   }).catch(function(error) {
     // An error happened.
