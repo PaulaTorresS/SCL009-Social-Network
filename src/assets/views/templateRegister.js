@@ -24,8 +24,8 @@ export const templateRegister = () => {
 	<div class="col-12"><input  id="user-lastname" type="text" placeholder="apellido"></div>
 	<p class="col-12 error" id="lastname-error"></p>
 	<div class="col-12"><input  id="child-name" type="text" placeholder="nombre de hij@(opcional)"></div>
-	<input type="button" id="submit" value="Enviar">
-	<input type="button" id="back" value="Volver">
+	<div class="col-12 btn"><input type="button" class="btn" id="submit" value="Enviar"></div>
+	<div class="col-12 btn"><input type="button" id="back" value="Volver"></div>
 	</div>
 												`;
 	document.getElementById('submit').addEventListener('click', ()=>{

@@ -21,9 +21,9 @@ export const templateLogin = () =>{
 			<p class="col-12 error" id="emailerror"></p>
 			<div class="col-12"><input type="password" placeholder="contraseña" id="txtPassword"></div>
 			<p class="col-12 error" id="passerror"></p>
-			<div class="col-12"><input type="button" id="logIn" value="Iniciar sesión"></div>
-			<div class="col-12"><input type="button" id="logInGoogle" value="Acceder con Google"></div>
-			<div class="col-12"><input type="button" id="signUp" value="Registrarse"></div>
+			<div class="col-12 btn"><input type="button" id="logIn" value="Iniciar sesión"></div>
+			<div class="col-12 btn"><input type="button" id="logInGoogle" value="Acceder con Google"></div>
+			<div class="col-12 btn"><input type="button" id="signUp" value="Registrarse"></div>
 		</div>
 
 		`;

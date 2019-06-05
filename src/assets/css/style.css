@@ -13,6 +13,14 @@ body{
 input{
 	border-radius: 8px;
 	width: 15em;
+	padding: 5px;
+}
+input#back{
+	margin: 20px;
+	
+}
+.btn input{
+	color:yellow;
 }
 .error {
 	display: none;
