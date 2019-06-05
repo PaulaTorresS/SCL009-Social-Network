@@ -54,6 +54,25 @@ input#login, input#login-google, input#back{
 	color:white;
 	font-weight: 700;
 }
+input#login:hover,
+input#login:focus,
+input#login-google:hover,
+input#login-google:focus,
+input#back:hover,
+input#back:focus{
+	background: #ff637d;
+	border-color:#cd457c;
+	transition: .5s;
+}
+
+input#sign-up:hover,
+input#sign-up:focus,
+input#submit:hover,
+input#submit:focus{
+	background: #66d7d1;
+	border-color: #4a7c7c;
+	transition: .5s;
+}
 .error {
 	display: none;
 }

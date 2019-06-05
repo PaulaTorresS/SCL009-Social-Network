@@ -33,7 +33,7 @@ export const templateLogin = () =>{
 			<div class="col-12">
 				<input type="button" id="login-google" value="Acceder con Google">
 			</div>
-			<p class="col-12 msge" id="msge3">Todavía no tienes cuenta? Registrate!</p>
+			<p class="col-12 msge" id="msge3">Todavía no tienes cuenta?</p>
 			<div class="col-12">
 				<input type="button" id="sign-up" value="Registrarse">
 			</div>

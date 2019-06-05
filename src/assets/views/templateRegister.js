@@ -68,6 +68,7 @@ export const templateRegister = () => {
            	 if(newUserPass === "" || newUserPass.length<6){
 	        	document.getElementById('pass-error').style.display = "block";
 	            document.getElementById('pass-error').innerHTML=`Debes ingresar una contraseña con minimo 6 caracteres.`;
+	        	document.getElementById('signup-pass').focus();
 	        }else{
 	        	document.getElementById('pass-error').style.display = "none";
 	            
@@ -83,13 +84,13 @@ export const templateRegister = () => {
 	           	if(newUserName===""){
 	        	document.getElementById('name-error').style.display = "block";
 	        	document.getElementById('name-error').innerHTML = "Debes ingresar tu nombre";
-	        	document.getElementById('user-name').focus();
+	        	// document.getElementById('user-name').focus();
 		       	}else{
 		       		document.getElementById('name-error').style.display = "none";
 		       		if(newUserLastName === ""){
 		       			document.getElementById('lastname-error').style.display="block";
 		       			document.getElementById('lastname-error').innerHTML = "Debes ingresar tu apellido";
-		       			document.getElementById('user-lastname').focus();
+		       			// document.getElementById('user-lastname').focus();
 		       		}else{
 		       			document.getElementById('lastname-error').style.display = "none";
 		        		createNewUser(newUserEmail,newUserPass);
