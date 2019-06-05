@@ -26,8 +26,10 @@ body{
 }
 /*estilo de pagina de inicio(sign in)*/
 #templatelogin img{
-	display: block;
-	max-width: 100%;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	max-width: 50%;
+	
 }
 .templatelogin, .templateregister{
 	align-content: center;
