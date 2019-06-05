@@ -36,7 +36,6 @@ body{
 	text-align: center;
 }
 input{
-<<<<<<< HEAD
 	border-radius: 8px;
 	width: 15em;
 	padding: 5px;
@@ -47,46 +46,6 @@ input#back{
 }
 .btn input{
 	color:yellow;
-=======
-	border:solid 1px #4a7c7c;
-	padding: .4em;
-	border-radius: 10px;
-	width: 19em;
-	text-transform: uppercase;
-
-}
-input#sign-up,input#submit{
-	border-color:#cd457c;
-	background: #ff637d;
-	color: white;
-	font-weight: 700;
-
-}
-input#login, input#login-google, input#back{
-	
-	background: #66d7d1;
-	color:white;
-	font-weight: 700;
-}
-input#login:hover,
-input#login:focus,
-input#login-google:hover,
-input#login-google:focus,
-input#back:hover,
-input#back:focus{
-	background: #ff637d;
-	border-color:#cd457c;
-	transition: .5s;
-}
-
-input#sign-up:hover,
-input#sign-up:focus,
-input#submit:hover,
-input#submit:focus{
-	background: #66d7d1;
-	border-color: #4a7c7c;
-	transition: .5s;
->>>>>>> 7e4b11503e70c8cb792c3fef26c95b8602a66983
 }
 .error {
 	display: none;

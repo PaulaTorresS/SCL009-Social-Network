@@ -26,23 +26,9 @@ export const templateLogin = () =>{
 				<input type="password" placeholder="contraseña" id="txt-pass">
 			</div>
 			<p class="col-12 error" id="passerror"></p>
-<<<<<<< HEAD
 			<div class="col-12 btn"><input type="button" id="logIn" value="Iniciar sesión"></div>
 			<div class="col-12 btn"><input type="button" id="logInGoogle" value="Acceder con Google"></div>
 			<div class="col-12 btn"><input type="button" id="signUp" value="Registrarse"></div>
-=======
-			<div class="col-12">	
-				<input type="button" id="login" value="Iniciar sesión">
-			</div>
-			<p class="col-12 msge" id="msge2">Acceso con cuenta Google:</p>
-			<div class="col-12">
-				<input type="button" id="login-google" value="Acceder con Google">
-			</div>
-			<p class="col-12 msge" id="msge3">Todavía no tienes cuenta?</p>
-			<div class="col-12">
-				<input type="button" id="sign-up" value="Registrarse">
-			</div>
->>>>>>> 7e4b11503e70c8cb792c3fef26c95b8602a66983
 		</div>
 
 		`;

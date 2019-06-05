@@ -14,7 +14,6 @@ export const templateRegister = () => {
 			</div>
 		</header>
 	<div class="row templateregister">											
-<<<<<<< HEAD
 	<div class="col-12"><input  id="signup-email" type="email" placeholder="email"></div>
 	<p class="col-12 error" id="email-error"></p>
 	<div class="col-12"><input type="password" placeholder="contraseña" id="signup-pass"></div>
@@ -27,40 +26,6 @@ export const templateRegister = () => {
 	<div class="col-12"><input  id="child-name" type="text" placeholder="nombre de hij@(opcional)"></div>
 	<div class="col-12 btn"><input type="button" class="btn" id="submit" value="Enviar"></div>
 	<div class="col-12 btn"><input type="button" id="back" value="Volver"></div>
-=======
-		<div class="col-12">
-			<input  id="signup-email" type="email" placeholder="email">
-		</div>
-		<p class="col-12 error" id="email-error">
-		</p>
-		<div class="col-12">
-			<input type="password" placeholder="contraseña" id="signup-pass">
-		</div>
-		<div class="col-12">
-			<input type="password" placeholder="confirma contraseña" id="signup-confirm">
-		</div>
-		<p class="col-12 error" id="pass-error">
-		</p>
-		<div class="col-12">
-			<input  id="user-name" type="text" placeholder="nombre">
-		</div>
-		<p class="col-12 error" id="name-error">
-		</p>
-		<div class="col-12">
-			<input  id="user-lastname" type="text" placeholder="apellido">
-		</div>
-		<p class="col-12 error" id="lastname-error">
-		</p>
-		<div class="col-12">
-			<input  id="child-name" type="text" placeholder="nombre de hij@(opcional)">
-		</div>
-		<div  class="col-12">
-			<input type="button" id="submit" value="Enviar">
-		</div>
-		<div class="col-12">
-			<input  type="button" id="back" value="Volver">
-		</div>
->>>>>>> 7e4b11503e70c8cb792c3fef26c95b8602a66983
 	</div>
 												`;
 	document.getElementById('submit').addEventListener('click', ()=>{
