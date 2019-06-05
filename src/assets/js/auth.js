@@ -1,6 +1,6 @@
 import { validateNewUser } from './validation.js';
 import { templateLogin } from './../views/templateLogin.js';
-
+import { templateHome } from './../views/templateHome.js';
 
 export const createNewUser = (newUserEmail,newUserPass) => {
   if(validateNewUser(newUserEmail,newUserPass)){
@@ -10,6 +10,7 @@ export const createNewUser = (newUserEmail,newUserPass) => {
       swal ( "¡Felicitaciones!" , " Hemos enviado un correo de verificación de cuenta." , "success" );
       //alert("Hemos enviado un correo de verificación de cuenta.");
       window.location.hash = "";
+      firebase.auth().signOut();
       templateLogin();
       
     })
@@ -32,26 +33,26 @@ export const createNewUser = (newUserEmail,newUserPass) => {
 }
 
 
-// export const signIn = (email,pass) => {
-//   if(validateSignIn(email,pass)){
-//     const auth = firebase.auth();
-//     auth.signInWithEmailAndPassword(email,pass)
-//     .then(()=>{
-//       swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
-//        alert("Has iniciado sesión con exito");
-//       window.location.hash='#/home';
-//     })
-//     .catch((error)=>{
-//        // Handle Errors here.
-//       var errorCode = error.code;
-//       var errorMessage = error.message;
-//       console.log(error.message);
-//     })
-//   }else{
-//      swal ( "¡Advertencia!" , "Error en el ingreso del usuario." , "error");
-//        alert ("Error en el ingreso del usuario");
-//   }
-// }
+export const signIn = (email,pass) => {
+  if(validateNewUser(email,pass)){
+    const auth = firebase.auth();
+    auth.signInWithEmailAndPassword(email,pass)
+    .then(()=>{
+      swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
+       
+      window.location.hash='#/home';
+    })
+    .catch((error)=>{
+       // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(error.message);
+    })
+  }else{
+     swal ( "¡Advertencia!" , "Error en el ingreso del usuario." , "error");
+      
+  }
+}
 
 
 // export const authGoogle = () => {
@@ -89,7 +90,9 @@ export const observer = () => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log('existe usuario logueado')
-     
+      if(user.emailVerified){
+        console.log('verificado');
+      }
     } else {
       console.log('no existe usuario logueado');
       window.location.hash="";

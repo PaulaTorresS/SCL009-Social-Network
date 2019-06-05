@@ -31,17 +31,28 @@ body{
 	max-width: 50%;
 	
 }
+@media (min-width: 768px) {
+	#templatelogin img{
+	margin-top: 30px;
+	margin-bottom: 10px;
+	max-width: 25%;
+	
+	}
+}
 .templatelogin, .templateregister{
 	align-content: center;
 	text-align: center;
 }
 input{
 	border:solid 1px #4a7c7c;
-	padding: .4em;
+	padding: .6em;
 	border-radius: 10px;
 	width: 19em;
 	text-transform: uppercase;
 
+}
+input#txt-email,input#signup-email,input#txt-pass, input#signup-pass, input#signup-confirm{
+	text-transform: none;
 }
 input#sign-up,input#submit{
 	border-color:#cd457c;

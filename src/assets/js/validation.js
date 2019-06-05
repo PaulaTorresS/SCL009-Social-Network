@@ -12,3 +12,4 @@ export const validateNewUser = (newUserEmail,newUserPass) => {
     return true;
   }
 }
+
