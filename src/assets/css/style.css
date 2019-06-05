@@ -1,24 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+
+/* UNIVERSAL */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+}
+
+/* ROOT FONT STYLES */
+
+* {
+  font-family: 'Lato', Helvetica, sans-serif;
+  color: #333447;
+  line-height: 1.5;
+}
+
 body{
 	background:#EAF2E3;
 }
 /*estilo de pagina de inicio(sign in)*/
 #templatelogin img{
-	/*display: block;*/
+	margin-top: 30px;
+	margin-bottom: 10px;
 	max-width: 50%;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	
 }
 .templatelogin, .templateregister{
 	align-content: center;
 	text-align: center;
 }
 input{
-	border-radius: 8px;
-	width: 15em;
+	border:solid 1px #4a7c7c;
+	padding: .4em;
+	border-radius: 10px;
+	width: 19em;
+	text-transform: uppercase;
+
+}
+input#sign-up,input#submit{
+	border-color:#cd457c;
+	background: #ff637d;
+	color: white;
+	font-weight: 700;
+
+}
+input#login, input#login-google, input#back{
+	
+	background: #66d7d1;
+	color:white;
+	font-weight: 700;
+}
+input#login:hover,
+input#login:focus,
+input#login-google:hover,
+input#login-google:focus,
+input#back:hover,
+input#back:focus{
+	background: #ff637d;
+	border-color:#cd457c;
+	transition: .5s;
+}
+
+input#sign-up:hover,
+input#sign-up:focus,
+input#submit:hover,
+input#submit:focus{
+	background: #66d7d1;
+	border-color: #4a7c7c;
+	transition: .5s;
 }
 .error {
 	display: none;
 }
+p.error {
+	color:#ff637d;
+	font-size:14px;
+}
+.msge{
+	color:#4a7c7c;
+}
+p#msge1{
+	margin-bottom: 0;
+}
+p#msge2,p#msge3{
+	margin-top: 1.5em;
+	margin-bottom: 0;
+}
+
 /*estilo de home*/
 .container{
 	width: 100%;
