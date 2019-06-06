@@ -8,11 +8,7 @@ export const templateRegister = () => {
 			<div class="logo row">
 				<div class="col-12"> 
 					<center>
-<<<<<<< HEAD
-						<img src="assets/img/logo-mama-sabe.png" alt="Logo Mama Sabe">
-=======
 						<img src="assets/img/mama-sabe2.png" alt="logo">
->>>>>>> 7e4b11503e70c8cb792c3fef26c95b8602a66983
 				   	</center>
 				</div>
 			</div>
