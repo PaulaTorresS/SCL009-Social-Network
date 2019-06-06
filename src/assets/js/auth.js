@@ -96,6 +96,12 @@ export const authGoogle = () => {
 export const observer = () => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+      if(window.location.hash===""|| window.location.hash==="/#"){
+        window.location.hash="#/wall";
+        window.onhashchange ="#/wall";
+        templateWall();
+
+      }
       console.log('existe usuario logueado'); 
       if(user.emailVerified){
         console.log('verificado');
