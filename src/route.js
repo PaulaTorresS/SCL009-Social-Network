@@ -9,7 +9,7 @@ import { templateLogin } from './assets/views/templateLogin.js';
 
 const changeRoute = (hash) =>{
 	if (hash === '' || hash === '#/home' || hash === '#/register' || hash === '#/profile') {
-        //le pasa como parametro #/a la función showTemplate
+        //le pasa como parametro #/a la función showView
         return showView(hash);
 	}
 }
@@ -17,7 +17,7 @@ const changeRoute = (hash) =>{
 const showView = (hash) =>{
     //necesito sacar el #/ a mi string
     const router = hash.substring(2);
-    //Obtener desde el html el id del elemento donde se imprimirá showTemplate
+    //Obtener desde el html el id del elemento donde se imprimirá showView
     const mainRoot = document.getElementById('root');
     mainRoot.innerHTML='';
 
