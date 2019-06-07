@@ -7,13 +7,8 @@ import { templateProfile } from './assets/views/templateProfile.js';
 
 
 const changeRoute = (hash) =>{
-<<<<<<< HEAD
 	if (hash === '' || hash === '#/home' || hash === '#/register' || hash === '#/profile') {
         //le pasa como parametro #/a la función showView
-=======
-	if (hash === '' || hash === '#/wall' || hash === '#/register' || hash === '#/profile') {
-        //le pasa parametro #/ a la función showView
->>>>>>> a144f47fc6a72d24c215c9cc3fa6c4be998276ff
         return showView(hash);
 	}
 }
