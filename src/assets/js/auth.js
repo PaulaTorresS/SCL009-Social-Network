@@ -38,9 +38,15 @@ export const signIn = (userEmail,userPass) => {
     const auth = firebase.auth();
     auth.signInWithEmailAndPassword(userEmail,userPass)
     .then(()=>{
-      swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
+      let user = firebase.auth().currentUser;
+      if(!user.emailVerified){
+        console.log(user.emailVerified);
+        alert('correo no verificado');
+        firebase.auth().signOut();
+      }else{
+      //swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
       templateWall();
-      window.location.hash='#/wall';
+      window.location.hash='#/wall';}
     })
     .catch((error)=>{
        // Handle Errors here.
@@ -61,63 +67,114 @@ export const signIn = (userEmail,userPass) => {
 }
 
 
-export const authGoogle = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    authentication(provider);
-  }
-  const authentication = (provider) => {
-    firebase.auth().signInWithRedirect(provider);
-    firebase.auth().getRedirectResult().then(function(result) {
-      if (result.credential) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-               // ...
-      }
+export const authGoogle = () =>{
+  /*Crea una instancia del objeto del proveedor de Google*/
+  var provider = new firebase.auth.GoogleAuthProvider();
+  /*Autentica con Firebase a través del objeto del proveedor de Google.*/
+  firebase.auth().signInWithPopup(provider)
+  .then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
 
-      //The signed-in user info.
-      var user = result.user;
-      window.location.hash='#/wall';
-      //swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
-      console.log(result.user);
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
-  }
+    alert("Has iniciado sesión con exito");
+    window.location.hash='#/wall';
+    // ...
+  })
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
+
+// export const authGoogle = () => {
+//     var provider = new firebase.auth.GoogleAuthProvider();
+//     authentication(provider);
+//   }
+//   const authentication = (provider) => {
+//     firebase.auth().signInWithRedirect(provider);
+//     firebase.auth().getRedirectResult().then(function(result) {
+//       if (result.credential) {
+//         // This gives you a Google Access Token. You can use it to access the Google API.
+//         var token = result.credential.accessToken;
+//                // ...
+//       }
+
+//       //The signed-in user info.
+//       var user = result.user;
+//       window.location.hash = '#/wall';
+//      // observer();
+      
+     
+//       //swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
+//       //console.log(result.user);
+//     }).catch(function(error) {
+//       // Handle Errors here.
+//       var errorCode = error.code;
+//       var errorMessage = error.message;
+//       // The email of the user's account used.
+//       var email = error.email;
+//       // The firebase.auth.AuthCredential type that was used.
+//       var credential = error.credential;
+//       // ...
+//     });
+//   }
 
 
 /*Función Observador, que verifica que el usuario se encuentra logueado*/
-export const observer = () => {
+// export const observer = () => {
+//   firebase.auth().onAuthStateChanged(function(user){
+//     console.log(user);
+//     if(user===null){
+//       console.log("No hay usuario");
+//       window.location.hash = '';}
+    
+//     if(user.emailVerified){
+//       console.log(user.email);
+//       window.location.hash = '#/wall';
+//       window.location.hash != '/#';
+//       window.location.hash != '';
+//       // User is signed in.
+//     }
+//      if (!user.emailVerified && window.location.hash != '' && window.location.hash != '#/home'){
+//        console.log("No verificado, redireccionando a home")
+//        window.location.hash = '';
+//     }
+//   });
+// }
+export const observer=() =>{
   firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      if(window.location.hash===""|| window.location.hash==="/#"){
-        window.location.hash="#/wall";
-        window.onhashchange ="#/wall";
-        templateWall();
-
-      }
-      console.log('existe usuario logueado'); 
-      if(user.emailVerified){
-        console.log('verificado');
-      }
-    } else {
-      console.log('no existe usuario logueado');
-      window.location.hash="";
-      window.onhashchange ="";
-      templateLogin();
-    }
-  });
+console.log(user)
+if(user===null){
+  console.log("No hay usuario")
+  return  window.location.hash = '';
 }
+if (user.emailVerified) {
+  console.log(user.email)
+  window.location.hash = '#/wall';
+  // User is signed in.
+}
+ if (!user.emailVerified && window.location.hash != '' && window.location.hash != '#/home'){
+   console.log("No verificado, redireccionando a home")
+   window.location.hash = '';
+ }
+
+  })
+} 
+
+
 
 /*Función signOut(), que sirve para que cuando el usuario cierre sesión, lo dirigia a la pantalla de inicio*/
 
 export const signOut = () =>{
+   if(confirm("¿Realmente deseas cerrar sesión?")){
   firebase.auth().signOut()
   .then(function() {
     //swal("Chao!");
@@ -125,6 +182,7 @@ export const signOut = () =>{
   }).catch(function(error) {
     // An error happened.
   });
+  }
 }
 
 

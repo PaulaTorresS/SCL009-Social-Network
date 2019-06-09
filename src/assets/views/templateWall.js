@@ -1,7 +1,8 @@
-import { signOut } from './../js/auth.js';
+import { signOut, observer } from './../js/auth.js';
 import { templateProfile } from './templateProfile.js';
 import { changeClass } from './../js/menu.js';
 export const templateWall = () =>{
+	observer();
 	document.getElementById('root').innerHTML = `
 		<header id="wall">
 			<a href="#">
@@ -42,9 +43,14 @@ export const templateWall = () =>{
 		</header>
 		<main id="main">
 		</main>
-		<footer></footer>												`
+														`
 	changeClass();
+<<<<<<< HEAD
 	document.getElementById('btn-logout').addEventListener('click', () => {
+=======
+	document.getElementById('btn-logout').addEventListener('click', (e) => {
+		e.preventDefault();
+>>>>>>> e3ecfbcddc241dc1fc7a64bf55cb4cc106cef295
 		signOut();
 	});
 	document.getElementById('btn-profile').addEventListener('click', (e)=>{

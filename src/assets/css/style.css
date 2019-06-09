@@ -26,14 +26,13 @@ body{
 }
 /*estilo de pagina de inicio(sign in)*/
 #templatelogin img{
-	margin-top: 30px;
-	margin-bottom: 10px;
+	margin-top: 10px;
 	max-width: 50%;
 	
 }
 @media (min-width: 768px) {
 	#templatelogin img{
-	margin-top: 30px;
+	margin-top: 10px;
 	margin-bottom: 10px;
 	max-width: 25%;
 	
@@ -103,15 +102,23 @@ p.error {
 	color:#ff637d;
 	font-size:14px;
 }
+.msge:first-child{
+	margin-top: 0;
+	margin-bottom: 20px;
+}
 .msge{
 	color:#4a7c7c;
 }
 p#msge1{
 	margin-bottom: 0;
 }
-p#msge2,p#msge3{
-	margin-top: 1.5em;
+p#msge3{
+	margin-top: 2em;
 	margin-bottom: 0;
+}
+p#msge2{
+	margin-bottom: 0;
+	margin-top: 0.2em;
 }
 
 /*estilo de home*/
@@ -329,4 +336,24 @@ section#perfil{
 .fa-edit:focus{
 	color:#ff637d;
 	transition: .5s;
+}
+footer{
+	/*position: relative;*/
+	/*position: fixed;*/
+	/*bottom: 0px;*/
+	
+  	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: #f4f1bb;	
+	margin-top: 20px;
+	text-align: center;
+}
+.fixed{
+	position: fixed;
+	bottom: 0px;
+}
+footer p{
+	
+	color: #66d7d1;
 }
