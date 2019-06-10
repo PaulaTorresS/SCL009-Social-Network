@@ -3,20 +3,21 @@ import { templateLogin } from './../views/templateLogin.js';
 import { templateWall } from './../views/templateWall.js';
 
 export const createNewUser = (newUserEmail,newUserPass,newUserName,newUserLastName,childName) => {
-  let dbUsers = firebase.firestore();
+  let db = firebase.firestore();
   if(validateUser(newUserEmail,newUserPass,newUserName,newUserLastName,childName)){
     firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPass)
      .then(()=>{
       /*Base de datos, para almacenar de manera paralela en cloud firestore 
       dichos datos del usuario*/
-      dbUsers.collection("users").add({
-      email:newUserEmail,
-      name:newUserName,
-      lastname:newUserLastName,
-      childname:childName
-      })   
-      }).then(()=>{
-      console.log("Document successfully written!");
+        db.collection("users").add({
+        email:newUserEmail,
+        name:newUserName,
+        lastname:newUserLastName,
+        childname:childName
+        })   
+      })
+     .then(()=>{
+      // console.log("Document successfully written!");
       emailVerification();
       swal ( "¡Felicitaciones!" , " Hemos enviado un correo de verificación de cuenta." , "success" );
       //alert("Hemos enviado un correo de verificación de cuenta.");
