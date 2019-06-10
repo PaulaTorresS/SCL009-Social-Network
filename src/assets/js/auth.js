@@ -1,32 +1,43 @@
-import { validateUser } from './validation.js';
+import { validateUser, validateNewUser } from './validation.js';
 import { templateLogin } from './../views/templateLogin.js';
 import { templateWall } from './../views/templateWall.js';
 
-export const createNewUser = (newUserEmail,newUserPass) => {
-  if(validateUser(newUserEmail,newUserPass)){
+export const createNewUser = (newUserEmail,newUserPass,newUserName,newUserLastName,childName) => {
+  let db = firebase.firestore();
+  if(validateUser(newUserEmail,newUserPass,newUserName,newUserLastName,childName)){
     firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPass)
-    .then(()=>{
+     .then(()=>{
+      /*Base de datos, para almacenar de manera paralela en cloud firestore 
+      dichos datos del usuario*/
+        db.collection("users").add({
+        email:newUserEmail,
+        name:newUserName,
+        lastname:newUserLastName,
+        childname:childName
+        })   
+      })
+     .then(()=>{
+      // console.log("Document successfully written!");
       emailVerification();
       swal ( "¡Felicitaciones!" , " Hemos enviado un correo de verificación de cuenta." , "success" );
       //alert("Hemos enviado un correo de verificación de cuenta.");
       window.location.hash = "";
       firebase.auth().signOut();
-      templateLogin();
-      
-    })
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode);
-      if (errorCode === "auth/email-already-in-use"){
-        swal ( "¡Advertencia!" , "Este correo ya se encuentra en uso." , "info");
-        //alert("Este correo ya ha sido registrado");
-        document.getElementById('signup-email').value = '';
-        document.getElementById('signup-email').focus();
-      }
+      templateLogin();      
+      })
+      .catch((error)=>{
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        if (errorCode === "auth/email-already-in-use"){
+          swal ( "¡Advertencia!" , "Este correo ya se encuentra en uso." , "info");
+          //alert("Este correo ya ha sido registrado");
+          document.getElementById('signup-email').value = '';
+          document.getElementById('signup-email').focus();
+        }
       // ...
-    });
+      });
   }else{
      return "Error en la validación";
   }
@@ -67,37 +78,65 @@ export const signIn = (userEmail,userPass) => {
 }
 
 
-export const authGoogle = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    authentication(provider);
-  }
-  const authentication = (provider) => {
-    firebase.auth().signInWithRedirect(provider);
-    firebase.auth().getRedirectResult().then(function(result) {
-      if (result.credential) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-               // ...
-      }
+export const authGoogle = () =>{
+  /*Crea una instancia del objeto del proveedor de Google*/
+  var provider = new firebase.auth.GoogleAuthProvider();
+  /*Autentica con Firebase a través del objeto del proveedor de Google.*/
+  firebase.auth().signInWithPopup(provider)
+  .then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
 
-      //The signed-in user info.
-      var user = result.user;
-      observer();
+    alert("Has iniciado sesión con exito");
+    window.location.hash='#/wall';
+    // ...
+  })
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
+
+// export const authGoogle = () => {
+//     var provider = new firebase.auth.GoogleAuthProvider();
+//     authentication(provider);
+//   }
+//   const authentication = (provider) => {
+//     firebase.auth().signInWithRedirect(provider);
+//     firebase.auth().getRedirectResult().then(function(result) {
+//       if (result.credential) {
+//         // This gives you a Google Access Token. You can use it to access the Google API.
+//         var token = result.credential.accessToken;
+//                // ...
+//       }
+
+//       //The signed-in user info.
+//       var user = result.user;
+//       window.location.hash = '#/wall';
+//      // observer();
       
      
-      //swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
-      //console.log(result.user);
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
-  }
+//       //swal ( "¡Bienvenid@!" , "Has iniciado sesión con exito." , "success" );
+//       //console.log(result.user);
+//     }).catch(function(error) {
+//       // Handle Errors here.
+//       var errorCode = error.code;
+//       var errorMessage = error.message;
+//       // The email of the user's account used.
+//       var email = error.email;
+//       // The firebase.auth.AuthCredential type that was used.
+//       var credential = error.credential;
+//       // ...
+//     });
+//   }
 
 
 /*Función Observador, que verifica que el usuario se encuentra logueado*/
