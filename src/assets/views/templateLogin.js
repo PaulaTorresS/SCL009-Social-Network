@@ -43,13 +43,7 @@ observer();
 				<input type="button" id="sign-up" value="Registrarse">
 			</div>
 		</div>
-<<<<<<< HEAD
 		
-=======
-		</main>
-		
-
->>>>>>> e3ecfbcddc241dc1fc7a64bf55cb4cc106cef295
 		`;
 	
 	document.getElementById('login').addEventListener('click', () => {

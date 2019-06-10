@@ -45,12 +45,7 @@ export const templateWall = () =>{
 		</main>
 														`
 	changeClass();
-<<<<<<< HEAD
 	document.getElementById('btn-logout').addEventListener('click', () => {
-=======
-	document.getElementById('btn-logout').addEventListener('click', (e) => {
-		e.preventDefault();
->>>>>>> e3ecfbcddc241dc1fc7a64bf55cb4cc106cef295
 		signOut();
 	});
 	document.getElementById('btn-profile').addEventListener('click', (e)=>{
