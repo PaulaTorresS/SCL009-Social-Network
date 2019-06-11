@@ -55,13 +55,7 @@ export const templateWall = () =>{
 		</main>
 														`
 	changeClass();
-<<<<<<< HEAD
 	document.getElementById('btn-logout').addEventListener('click', () => {
-=======
-	readPost();
-	document.getElementById('btn-logout').addEventListener('click', (e) => {
-		e.preventDefault();
->>>>>>> 7b0382ad6afe25dc59d356654ad39fe5d45696eb
 		signOut();
 	});
 	document.getElementById('btn-profile').addEventListener('click', (e)=>{
