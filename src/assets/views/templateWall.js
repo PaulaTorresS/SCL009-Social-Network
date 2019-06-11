@@ -1,8 +1,10 @@
 import { signOut, observer } from './../js/auth.js';
 import { templateProfile } from './templateProfile.js';
 import { changeClass } from './../js/menu.js';
+import { createPost, readPost } from './../js/data.js';
 export const templateWall = () =>{
 	observer();
+
 	document.getElementById('root').innerHTML = `
 		<header id="wall">
 			<a href="#">
@@ -42,18 +44,24 @@ export const templateWall = () =>{
 			</div>
 		</header>
 		<main id="main">
-			<div id="messages" class="row templatewall">				
-			</div>
 			<div class="row templatewall">
 				<div class="col-12">
-					<textarea placeholder="escribe algo.." name=""  id="textarea" ></textarea>
-					<i class="fas fa-paper-plane"></i>
+					<textarea placeholder="escribe algo.." name=""  id="text-post"></textarea>
+					<i id="submit" class="fas fa-paper-plane"></i>
 				</div>
 			</div>
+			<div id="posts" class="row templatewall">				
+			</div>			
 		</main>
 														`
 	changeClass();
+<<<<<<< HEAD
 	document.getElementById('btn-logout').addEventListener('click', () => {
+=======
+	readPost();
+	document.getElementById('btn-logout').addEventListener('click', (e) => {
+		e.preventDefault();
+>>>>>>> 7b0382ad6afe25dc59d356654ad39fe5d45696eb
 		signOut();
 	});
 	document.getElementById('btn-profile').addEventListener('click', (e)=>{
@@ -61,5 +69,11 @@ export const templateWall = () =>{
 		templateProfile();
 		window.location.hash = '#/profile';
 	});
-
+	document.getElementById('submit').addEventListener('click',()=>{
+		let post = document.getElementById('text-post').value;
+		console.log(post);
+		createPost(post);
+	
+		
+	});
 }
