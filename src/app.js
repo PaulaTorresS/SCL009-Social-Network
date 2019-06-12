@@ -1,6 +1,6 @@
 
 import { initRoute } from './route.js';
-import { observer } from './assets/js/auth.js'
+//import { observer } from './assets/js/auth.js'
 import { firebaseInit } from './assets/js/firebaseinit.js';
 
 
@@ -10,15 +10,15 @@ const init = () => {
     //observer();       
 }
 
-const footerPosition = () =>{
-	let height = document.documentElement.clientHeight;
+// const footerPosition = () =>{
+// 	let height = document.documentElement.clientHeight;
 
 	
-	if(height > 568 && height<800) {
+// 	if(height > 568 && height<800) {
 		
-		document.getElementById('footer').classList.add('fixed');
-	}
-}
+// 		document.getElementById('footer').classList.add('fixed');
+// 	}
+// }
 window.addEventListener('load', init);
-window.addEventListener('load', footerPosition);
+//window.addEventListener('load', footerPosition);
 

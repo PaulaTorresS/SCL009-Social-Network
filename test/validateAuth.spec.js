@@ -1,4 +1,4 @@
-import { validateEmail, validateUser, validateNewUser } from "./../src/assets/js/validation.js";
+import { validateEmail, validateUser, validateNewUser, validatePost } from "./../src/assets/js/validation.js";
 
 describe("validateEmail",()=>{
     it('deberia retornar false, si el correo es invalido',()=>{
@@ -35,5 +35,17 @@ describe("validateNewUser", () =>{
 	})
 	it('deberia retornar true si todos los parametros estan validos', () =>{
 		expect(validateNewUser('email@email.com','password','name','lastname','childname')).toBe(true);
+	})
+})
+
+describe ("validatePost", () => {
+	it('debería retornar false si parametro es un string vacio', () =>{
+		expect(validatePost('')).toBe(false);
+	})
+	it('debería retornar false si longitud de parametro es menos de 2', ()=>{
+		expect(validatePost('p')).toBe(false);
+	})
+	it('debería retornar true si parametro no es string vacio y su longitud es mas de 2', ()=>{
+		expect(validatePost('blablabla')).toBe(true);
 	})
 })
