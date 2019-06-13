@@ -47,7 +47,7 @@ export const templateWall = () =>{
 				<div class="col-12">
 					<textarea placeholder="escribe algo.." name=""  id="text-post"></textarea>
 					
-					<i id="submit" class="fas fa-paper-plane"></i>
+					<button class="submit"><i id="submit" class="fas fa-paper-plane"></i></button>
 					<p id="post-error" class="error"></p>
 				</div>
 			</div>
@@ -67,12 +67,13 @@ export const templateWall = () =>{
 	document.getElementById('submit').addEventListener('click',()=>{
 		let post = document.getElementById('text-post').value;
 		let count = 0;
+		let liked = false;
 		if(document.getElementById('text-post').value === ''|| document.getElementById('text-post').value<2){
 			document.getElementById('post-error').style.display = "block";
 			document.getElementById('post-error').innerHTML = "Publicación debe tener minimo 2 caracteres"
 		}else{
 			document.getElementById('post-error').style.display = "none";
-			createPost(post, count);
+			createPost(post, count, liked);
 		}
 
 			
@@ -82,25 +83,31 @@ export const templateWall = () =>{
 }
 
 export const printPost = (doc) => {
-	//let postDate = new Date(doc.data().date);
+	let postDate = new Date(doc.data().date);
+	postDate = postDate.toLocaleString();
 	if(firebase.auth().currentUser.uid===doc.data().uid){
 	document.getElementById('posts').innerHTML +=
   		  		`<div class="container container__post">
-			  		<div class="row">
-				  		<div class="img-person col-4">
-				  			<img src="assets/img/person.jpg" alt="" />	
+			  		<div class="row templatewall">
+				  		<div class="img-person col-12">
+				  			<div class="row img">
+				  					<img src="assets/img/person.jpg" alt="" />				  				
+				  					<p id="name">${doc.data().authorname}</p>
+				  					<p id="date">${postDate}</p>
+				  				
+				  			</div>	
 				  		</div>		
-				  		<div id="msg${doc.id}" class="post col-4"> 
+				  		<div id="msg${doc.id}" class="post col-12"> 
 				  			<p>${doc.data().message}</p> 
 				  		</div>
-				  		<div class="input col-4">
+				  		<div class="input col-12">
 				  			<input id="inp${doc.id}" type="text">				  				
 				  		</div>
-				  		<div class="buttons col-4">
+				  		<div class="buttons col-12">
 					  		<button class="delete" id="delete${doc.id}"><i class="fas fa-trash-alt"></i></button>
 					  		<button class="edit" id="edit${doc.id}"><i class="fas fa-edit"></i></button>
 					  		<button class="save" id="save${doc.id}"><i class="fas fa-save"></i></button>	
-					  		<button class="like"><i id="like${doc.id}" class="fas fa-heart"></i> <span id="counter">
+					  		<button value="${doc.id}" id="like${doc.id}" class="like"><i id="heart${doc.id}" class="fas fa-heart"></i> <span id="counter">
                                ${doc.data().like}
                             </span></button>
 					  		
@@ -112,19 +119,27 @@ export const printPost = (doc) => {
   	}else{
   		document.getElementById('posts').innerHTML +=
   		  		`<div class="container container__post">
-			  		<div class="row">
-				  		<div class="img-person col-4">
-				  			<img src="assets/img/person.jpg" alt="" />	
+			  		<div class="row templatewall">
+				  		<div class="img-person col-12">
+				  			<div class="row img">
+				  				
+				  					<img src="assets/img/person.jpg" alt="" />
+				  				
+				  				
+				  					<p id="name">${doc.data().authorname}</p>
+				  					<p id="date">${postDate}</p>
+				  				
+				  			</div>	
 				  		</div>		
-				  		<div id="msg${doc.id}" class="post col-4"> 
+				  		<div id="msg${doc.id}" class="post col-12"> 
 				  			<p>${doc.data().message}</p> 
 				  		</div>
-				  		<div class="input col-4">
+				  		<div class="input col-12">
 				  			<input id="inp${doc.id}" type="text">				  				
 				  		</div>
-				  		<div class="buttons col-4">
+				  		<div class="buttons col-12">
 					  		
-					  		<button class="like"><i id="like${doc.id}" class="fas fa-heart"></i><span id="counter">
+					  		<button id="like${doc.id}" value="${doc.id}" class="like"><i id="heart${doc.id}" class="fas fa-heart"></i><span id="counter">
                                 ${doc.data().like}
                             </span></button>
 
@@ -132,8 +147,14 @@ export const printPost = (doc) => {
 			  		</div>
 			  	</div>
 		  		
-  				`
+  				`;
+
   	}
+  	let liked = doc.data().liked;
+  	if(liked===true){
+		document.getElementById('heart'+doc.id).style.color = "#ff637d";
+		
+	}
 }
 
 
@@ -142,7 +163,7 @@ export const addEvents = (doc) =>{
        // evento click para eliminar el post
         document.getElementById('delete'+doc.id).addEventListener('click', ()=>{
             deletePost(doc.id);
-            console.log('hola');
+            
         })
 		// evento click para editar el post 
         document.getElementById('edit'+doc.id).addEventListener('click', ()=>{
@@ -152,21 +173,37 @@ export const addEvents = (doc) =>{
     }
 
     document.getElementById('like'+doc.id).addEventListener('click',()=>{
+    	//document.getElementById('heart'+doc.id).style.color = "#ff637d";
+    	// let postid = document.getElementById('like'+doc.id).value;
+    	// let currentUser = firebase.auth().currentUser.uid;
+    	// console.log(postid);
+    	// console.log(currentUser);
+    	// compareLike(postid, currentUser);
+    	// createLike(postid);
+    	let liked = doc.data().liked;
+    	if(liked === false){
     	let count = doc.data().like;
-    	
-    	count += 1;
-    	console.log(count);
+     	count += 1;	
+     	liked = true;
     	let db = firebase.firestore();
     	let docRef = db.collection('post').doc(doc.id);
 			return docRef.update({
-				like: count
+				like: count,
+				liked: liked
 			})
 			.then(()=>{
+				document.getElementById('like'+doc.id).disabled = true;
+				document.getElementById('heart'+doc.id).style.color = "#ff637d";
 				console.log("Documento actualizado")
 			})
 			.catch((error)=>{
 				console.error(error);
 			})
+		}
+
+
+
+
 
     })
 }
