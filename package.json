@@ -11,7 +11,7 @@
     "eslint": "eslint --ext .js src/ test/",
     "htmlhint": "htmlhint src/*.html",
     "pretest": "npm run eslint && npm run htmlhint",
-    "deploy": "gh-pages -d scr/" /*npm run deploy*/
+    "deploy": "gh-pages -d scr/" 
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/Mariia1304/SCL009-Social-Network#readme",
   "dependencies": {
-    "@babel/core": "^7.4.5", /*traduce el codigo js a js antiguo para compatibilidad con todos los navegadores*/
+    "@babel/core": "^7.4.5", 
     "@babel/plugin-transform-modules-commonjs": "^7.4.4",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.8.0",
@@ -40,7 +40,6 @@
     "express": "^4.17.1",
     "gh-pages": "^2.0.1",
     "htmlhint": "^0.11.0",
-    "jest": "^24.8.0" /*para los test*/
-    /*npmjs.com - dependencias para recargar pag. auto: reload*/
+    "jest": "^24.8.0" 
   }
 }
