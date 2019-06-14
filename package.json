@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mariia1304/SCL009-Social-Network.git" /*git+https://github.com/GelenMR/SCL009-Social-Network.git*/
+    "url": "git+https://github.com/Mariia1304/SCL009-Social-Network.git" 
   },
   "keywords": [
     "red",
