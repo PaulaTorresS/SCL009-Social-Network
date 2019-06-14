@@ -1,7 +1,7 @@
 # APLICACIÓN MAMÁ SABE
 
 Mamá Sabe App, es una Red Social para padres (mamis y papis) que tienen hij@s en guarderias y quieren estar todo el timepo informados sobre lo que hacen en estos lugares donde sus hij@s pasan parte de su tiempo, además de estar conectados con las tías que los cuidan y entre ell@s, para intercambiar tips, consejos y cualquier material relevante (informaciones, articulos, fotos, videos y más), pudiendo acceder a ella en cualquier momento desde cualquier dispositivo.
-![Mamá Sabe App](src/assets/img/Captura de pantalla de 2019-06-13 17-16-23.png)
+![Mamá Sabe App](src/assets/img/PantallaInicio.png)
 
 **[VER PÁGINA](https://mariia1304.github.io/SCL009-Social-Network/index.html)**
 
