@@ -11,7 +11,7 @@
     "eslint": "eslint --ext .js src/ test/",
     "htmlhint": "htmlhint src/*.html",
     "pretest": "npm run eslint && npm run htmlhint",
-    "deploy": "gh-pages -d scr/" 
+    "deploy": "gh-pages -d src/" 
   },
   "repository": {
     "type": "git",
