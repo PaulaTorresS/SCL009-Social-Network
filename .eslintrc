@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+
 "env": {
     "browser": true,
     "node": true,
@@ -9,7 +9,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
 }
-=======
+
   "env": {
     "browser": true,
     "node": true,
@@ -19,5 +19,5 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   }
->>>>>>> cb3b333355334951dd67136aeaa2c23000fe72dc
+
 }
