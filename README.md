@@ -1,3 +1,92 @@
+# APLICACIÓN MAMÁ SABE
+
+Mamá Sabe App, es una Red Social para padres (mamis y papis) que tienen hij@s en guarderias y quieren estar todo el timepo informados sobre lo que hacen en estos lugares donde sus hij@s pasan parte de su tiempo, además de estar conectados con las tías que los cuidan y entre ell@s, para intercambiar tips, consejos y cualquier material relevante (informaciones, articulos, fotos, videos y más), pudiendo acceder a ella en cualquier momento desde cualquier dispositivo.
+![Mamá Sabe App](src/assets/img/Captura de pantalla de 2019-06-13 17-16-23.png)
+
+**[VER PÁGINA](https://mariia1304.github.io/SCL009-Social-Network/index.html)**
+
+# DEFINICIÓN DEL PRODUCTO
+
+Nuestra idea nace de observar la cantidad de grupos (ej.:facebook, whatsapp) de padres/madres que quieren comunicarse con las tias que cuidan a sus hij@s en guarderias y su necesidad de estar informados al respecto. Se realizó una encuesta a algunos padres/madres que tenian hij@s en guarderias, preguntando: Como se comunican y/o obtienen informaciones de las tias y otros padres/madres?, Si se unirian a una red social donde puedan compartir y comunicarse con las tias y otros padres/madres?, Cuan importante seria estar informados de lo que hacen tus hij@s en sus guarderias y poder acceder a esa información en todo momento?, y los resultados de esta arrojaron que mas de un 70% le da valor al estar informados y comunicados en lo que respecta a las guarderias de sus hij@s. Basadas en esto quisimos brindar una herramienta esclusiva para tal fin: Mamá Sabe App!
+
+# PROCESO DE DISEÑO Y PLANIFICACIÓN DEL PROYECTO
+
+**Prototipamos nuestra idea con los siguientes sckeths:**
+**![IMAGENES DE SCKETHS](src/assets/img/prototipo-baja-fidelidad1.jpg)**
+**![IMAGENES DE SCKETHS](src/assets/img/prototipo-baja-fidelidad2.jpg)**
+**![IMAGENES DE SCKETHS](src/assets/img/prototipo-baja-fidelidad3.jpg)**
+**![IMAGENES DE SCKETHS](src/assets/img/prototipo-baja-fidelidad4.jpg)**
+**![IMAGENES DE SCKETHS](src/assets/img/prototipo-baja-fidelidad5.jpg)**
+
+A raiz de estas aristas, pudimos definir cada una de las historias de usuario que nos llevan a la construcción de esta App, la cual planificamos de la siguiente forma:
+**[LINK: Planificación Red Social](https://trello.com/b/aZR2LZuS/red-social)**.
+
+# HISTORIAS DE USUARIO Y DISEÑO DE INTERFAZ DE USUARIO
+
+### 1) Como Madre/Padre QUIERO Ingresar a la App mediante mi usuario PARA poder ingresar a la App de manera segura.
+
+## Criterios de Aceptación:
+.- Elegir logearse con cuenta de google o cuenta de app
+.- Generar mensaje de error si los campos usuario y contraseña estan vacios
+.- Generar un mensaje de error si al pinchar login el usuario no existe o no coincide la contraseña.
+
+**![Prototipo de Alta Fidelidad-HU1](src/assets/img/prototipo-alta-fidelidadHU1.jpg)**
+**![Prototipo de Alta Fidelidad-HU1](src/assets/img/prototipo-alta-fidelidadHU1-2.jpg)** 
+
+
+### 2) Como Madre/Padre o Tia QUIERO crear una cuenta en App de Guarderia PARA poder registrarme en la App y ser parte de la comunidad de guarderia.
+
+## Criterios de Aceptación:
+.- Permitir al usuario rellenar sus datos personales
+.- Genera mensaje de error si el usuario no ingresa nombre o apellido.
+.- Genera mensaje de error si el usuario no ingresa un correo valido.
+.- Genera mensaje de error si el campo contraseña y confirmación no son iguales o esta vacio.
+.- Validar información al pinchar boton enviar.
+.- Cuando el usuario crea la cuenta, debe recibir un correo de verificación.
+.- Despues que el usuario verifique correo se le informará la creación exitosa de su cuenta. 
+
+**![Prototipo de Alta Fidelidad-HU2](src/assets/img/prototipo-alta-fidelidadHU2-1.jpg)**
+**![Prototipo de Alta Fidelidad-HU2](src/assets/img/prototipo-alta-fidelidadHU2-2.jpg)**
+**![Prototipo de Alta Fidelidad-HU2](src/assets/img/prototipo-alta-fidelidadHU2-3.jpg)**
+
+
+### 3) Como Madre/Padre QUIERO ver el muro General de la App PARA informarme de las novedades (fotos e informaciones) 
+## Criterios de Aceptación:
+.- Permitir al usuario ver las publicaciones del muro
+.- Permitir al usuario Crear(CRUD) una publicación mediante un cuadro de texto.
+.- Permitir al usuario leer (CRUD) publicación.
+.- Permitir al usuario editar(CRUD) publicación.
+.- Permitir al usuario eliminar(CRUD) publicación.
+.- Permitir al usuario dar likes a una publicación.
+.- Permitir al usuario conocer la cantidad de likes de una publicación.
+
+**![Prototipo de Alta Fidelidad-HU3](src/assets/img/prototipo-baja-fidelidad1.jpg)** (X imagenes)
+
+## DEFINICIÓN DE TERMINADO QUE DEBEN CUMPLIR CADA UNA DE LAS HISTORIAS DE USUARIO:
+- Debe ser una SPA.
+- Debe ser responsive.
+- Debes haber recibido code review de al menos una compañera de otro equipo.
+- Haces test unitarios y, además, has testeado tu producto manualmente.
+- Hiciste pruebas de usabilidad e incorporaste el feedback del usuario.
+- Desplegaste tu aplicación y has etiquetado tu versión (git tag).
+
+# TEST DE USABILIDAD
+
+En la medida que avanzamos en la construcción de esta app se realizaron algunos test de usabilidad que sirvieron para corregir errores, pueden acceder a algunos de los videos acá:
+
+[Test HU1](src/assets/img/)
+[Test HU2](src/assets/img/) 
+[Test HU3](src/assets/img/)
+
+# CHECKLIST
+
+
+
+
+
+
+
+
 # Creando una Red Social
 
 ## Índice
